@@ -5,11 +5,15 @@ public class Doctor {
     String speciality;
 
     Doctor() {
-        id = ++autoId;
+        // this hace referencia a todos los elementos que componen la clase
+        this.setId();
+        // Cuando no se asignan valores a los atributos toman el valor por defecto
     }
 
-    Doctor(String name) {
-        System.out.println("El nombre del Doctor asignado es: " + name);
+    Doctor(String name, String speciality) {
+        this.setId();
+        this.name = name;
+        this.speciality = speciality;
     }
 
     // Comportamientos
@@ -19,5 +23,9 @@ public class Doctor {
 
     public void showId() {
         System.out.println("ID Doctor: " + id);
+    }
+
+    private void setId() {
+        id = ++autoId;
     }
 }
