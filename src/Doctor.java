@@ -1,31 +1,75 @@
-public class Doctor {
-    static int autoId = 0; // Autoincrement
-    int id;
-    String name;
-    String speciality;
+import java.util.ArrayList;
+import java.util.Date;
 
-    Doctor() {
-        // this hace referencia a todos los elementos que componen la clase
-        this.setId();
-        // Cuando no se asignan valores a los atributos toman el valor por defecto
-    }
+public class Doctor extends User {
+    // Atributos
+    private String speciality;
+    ArrayList<AvailableAppointment> availableAppointments;
 
-    Doctor(String name, String speciality) {
-        this.setId();
-        this.name = name;
-        this.speciality = speciality;
+    // Constructor
+    Doctor(String name, String email) {
+        super(name, email);
+        availableAppointments = new ArrayList<>();
     }
 
     // Comportamientos
-    public void showName() {
-        System.out.println(name);
+    public void addAvailableAppointment(Date date, String time){
+        availableAppointments.add(new Doctor.AvailableAppointment(date,time));
     }
 
-    public void showId() {
-        System.out.println("ID Doctor: " + id);
+    public ArrayList<AvailableAppointment> getAvailableAppointments(){
+        return availableAppointments;
     }
 
-    private void setId() {
-        id = ++autoId;
+    @Override
+    public String toString() {
+        return super.toString() +
+                "\n Speciality='" + speciality + '\'' +
+                "\n Available=" + availableAppointments.toString();
     }
+
+    // Nested Class
+    public static class AvailableAppointment {
+        private int id;
+        private Date date; // Que fecha se encuentra disponible el doctor
+        private String time; // hora
+
+        public AvailableAppointment(Date date, String time) {
+            this.date = date;
+            this.time = time;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public Date getDate() {
+            return date;
+        }
+
+        public void setDate(Date date) {
+            this.date = date;
+        }
+
+        public String getTime() {
+            return time;
+        }
+
+        public void setTime(String time) {
+            this.time = time;
+        }
+
+        @Override
+        public String toString() {
+            return "Available Appointment:" +
+                    "\n Date = " + date +
+                    "\n Time = " + time;
+        }
+    }
+
+
 }
