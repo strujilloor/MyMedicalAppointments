@@ -1,3 +1,5 @@
+package model;
+
 public class User {
     static int autoId = 0; // Autoincrement
     private int id;
@@ -70,7 +72,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User: " +
+        return "model.User: " +
                 "\n id=" + id +
                 "\n name='" + name + '\'' +
                 "\n email='" + email + '\'' +

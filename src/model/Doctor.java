@@ -1,3 +1,5 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -7,7 +9,7 @@ public class Doctor extends User {
     ArrayList<AvailableAppointment> availableAppointments;
 
     // Constructor
-    Doctor(String name, String email) {
+    public Doctor(String name, String email) {
         super(name, email);
         availableAppointments = new ArrayList<>();
     }
