@@ -30,6 +30,12 @@ public class Doctor extends User {
                 "\n Available=" + availableAppointments.toString();
     }
 
+    @Override
+    public void showDataUser() {
+        System.out.println("Empleado Hospital: Cruz Roja");
+        System.out.println("Departamento: Oncologia");
+    }
+
     // Nested Class
     public static class AvailableAppointment {
         private int id;

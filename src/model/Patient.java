@@ -65,4 +65,10 @@ public class Patient extends User {
                 "\n height=" + getFormattedHeight() +
                 "\n blood='" + blood + '\'';
     }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("Paciente");
+        System.out.println("Historial completo");
+    }
 }

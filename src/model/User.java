@@ -1,6 +1,6 @@
 package model;
 
-public class User {
+public abstract class User {
     static int autoId = 0; // Autoincrement
     private int id;
     private String name;
@@ -79,4 +79,6 @@ public class User {
                 "\n address='" + address + '\'' +
                 "\n phoneNumber='" + phoneNumber + '\'';
     }
+
+    public abstract void showDataUser();
 }
