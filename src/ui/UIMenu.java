@@ -34,7 +34,6 @@ public class UIMenu {
                     break;
                 case 2:
                     response = 0;
-                    // showPatientMenu();
                     authUser(2);
                     break;
                 case 0:
@@ -81,7 +80,7 @@ public class UIMenu {
                         emailCorrect = true;
                         // Obtener el usuario logeado
                         userLogged = patient;
-                        // ShowPatientMenu
+                        UIPatientMenu.showPatientMenu();
                     }
                 }
             }
